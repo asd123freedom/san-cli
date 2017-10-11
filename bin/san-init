@@ -111,10 +111,9 @@ else {
  */
 
 function run () {
-    // check if template is local(考虑一下是否保留这个判断)
+    // check if template is local(这个判断是处理offline的情况的)
     if (isLocalPath(template)) {
-        console.log('Tempalte path is local path');
-        return;
+        // console.log('Tempalte path is local path');
         var templatePath = getTemplatePath(template)
         if (exists(templatePath)) {
             generate(name, templatePath, to, function (err) {
@@ -123,6 +122,7 @@ function run () {
                 }
                 console.log()
                 logger.success('Generated "%s".', name)
+                rm(to + '/meta.js')
             });
         }
         else {
@@ -169,6 +169,7 @@ function downloadAndGenerate (template) {
             }
             console.log()
             logger.success('Generated "%s".', name)
+            rm(to + '/meta.js');
         });
     });
 }
