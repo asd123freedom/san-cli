@@ -1,6 +1,6 @@
 {
   "name": "s-init",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple CLI for init San.js projects inspired by vue-cli.",
   "preferGlobal": true,
   "bin": {
